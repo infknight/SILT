@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container" style="position: fixed;">
+        <h1 style="text-align: center; font-size: 50px; color: rgb(73, 73, 73); margin: 10px 0 0 18%; text-shadow: black;">Places to Eat and Grab a Drink in B/CS</h1>
+
+        <!--Search results displayed-->
+        <div id="map-container-yelp" style="height: 94%; width: 50%; position: fixed;">
+            <!--NOTE: change sizing of iFrame to percentages to make robust on different platforms -->
+            <iframe src="/yelp_map" height="100%" width="100%" frameborder="1" noresize="noresize"></iframe>
+        </div>
+
+        <!--User input: search & filter options-->
+        <div class="row" style="margin-left: 98%; width: 100%;">
+            <form method="GET" action="#">
+                <!-- Search field -->
+                <label class="form-control-label" for="searchInput">Search Restaurants:</label>
+                <input class="form-control" type="search" id="searchInput" name="searchInput" size="80" placeholder="Enter restaurant name or food type...">
+                <input type="submit" value="Search" style="background-color:#330000; color:white;">
+            </form>
+        </div>
+        <br>
+        <br>
+
+        <!-- Search results -->
+        <div style="margin-left: 98%; width: 60%; position: -webkit-sticky; position: sticky;">
+            <h2>Search Results</h2>
+            <hr>
+        </div>
+        <div class="container" style="margin-left: 50%; width: 34%; position: fixed; overflow-y: scroll;">
+            {% if isBusinessDataEmpty %}
+                <span>No results found.</span>
+            {% else %}
+                {% for row in businessData.index %}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="col-sm-4">
+                                        <a href="{{ businessData['url'][row] }}"><img class="img-responsive" src="{{ businessData['image_url'][row] }}" height="128" width="170" alt="Restaurant image"></a>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <h4 class="card-title">{{ businessData['name'][row] }}</h5>
+                                        <hr>
+                                        {% for loc in businessData['location'][row].keys() %}
+                                            {% if loc == 'address1' %}
+                                                <p style="font-size: 1.0rem;">Address: {{ businessData['location'][row].get(loc) }}</p>
+                                            {% endif %}
+                                        {% endfor %}
+                                        <p style="font-size: 1.0rem;">Price: {{ businessData['price'][row] }}</p>
+                                        <p style="font-size: 1.0rem;">Rating: {{ businessData['rating'][row] }}/5</p>
+                                        <p style="font-size: 1.0rem;">Phone: {{ businessData['display_phone'][row] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

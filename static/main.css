@@ -1,0 +1,367 @@
+/* MOBILE FRIENDLY VERSION */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+  /* div#wrapper {
+      width: 400px;
+  }
+
+  div#header {
+      height: 93px;
+      position: relative;
+  }
+
+  div#header h1 {
+      font-size: 140%;
+  }
+
+  #content {
+      float: none;
+      width: 100%;
+  }
+
+  #navigation {
+      float:none;
+      width: auto;
+  } */
+  .sidenav {
+    height: 100%;
+    width: 100px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #330000;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  .main {
+    margin-left: 100px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+}
+
+
+
+body {
+  font-family: "Lato", sans-serif;
+}
+/* MODIFYING BOOTSTRAP CLASSES */
+.col-md-8{
+  max-width: 100%;
+  flex: 0 0 100%;
+}
+
+
+/*styling for profile */
+#profile-content{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-color: rgb(240, 240, 240);
+  overflow-y: scroll;
+}
+.profile-container{
+  width: 40%;
+  top: 5%;
+  right: 35%;
+  position: fixed;
+  background-color: rgb(240, 240, 240);
+  overflow-y: scroll;
+
+}
+.spotify-container{
+  top: 5%;
+  right: 5%;
+  max-width: 25%;
+  position: fixed;
+  background-color: rgb(240, 240, 240);
+  overflow-y: scroll;
+
+}
+/*styling for CSCE 315 text on sidebar*/
+#class-text{
+  color: white;
+}
+#color-theme-container{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+/*styling for nav bar */
+.color-theme-content{
+  width: 80px;
+  float: left;
+  margin: 0 10px 0 0;
+  text-align: center;
+}
+.color-theme-content h5{
+  color: rgb(204, 204, 204);
+}
+#default-mode{
+  box-shadow: 2px 8px 45px rgba(255, 255, 255, 1);
+}
+/*styling for forum*/
+.forum-content-container{
+  height: 100%;
+  /* width: 100%; */
+  left: 300px;
+  position: fixed;
+  background-color: rgb(240, 240, 240);
+  overflow-y: scroll;
+  
+}
+.forum_header{
+  font-size: 50px;
+  color: rgb(73, 73, 73);
+  margin: 10px 0 0 18%;
+  text-shadow: black;
+}
+.new-post-button{
+  background-color: #330000;
+  box-shadow: 2px 6px 25px grey;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  float: left;
+  font-size: 20px;
+  padding: 5px ;
+  margin: 0 10px 0 0;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 30px;
+}
+.new-post-button a{
+  text-decoration: none;
+  color: white;
+}
+#forum_navbar{
+  margin: 20px 0 0 0;
+}
+#forum_navbar_content{
+  margin: 0 0 0 10%;
+  width: 80%;
+}
+#forum_navbar_content a:hover{
+  box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+  transform: translate3D(0, -2px, 0);
+}
+#forum-cards{
+  border-top: solid;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+/* styling for forum cards */
+.article-metadata a{
+  color: black;
+  margin: 0 0 2rem 0;
+  font-size: 1.25rem;
+}
+.article-metadata small{
+  color: black;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.25rem;
+}
+.article-metadata a:hover{
+  color: rgb(170, 170, 170);
+}
+.card{
+  margin: 5px 15px 0 15px;
+  background: white;
+  box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all .2s linear;
+  width: 500px;
+  max-width: 45%;
+  padding: 0 5px 0 15px;
+}
+.card:hover {
+  box-shadow: 2px 8px 45px rgba(0, 0, 0, .15);
+  transform: translate3D(0, -2px, 0);
+}
+.article-title{
+  font-size: 1.5rem;
+}
+.article-content{
+  font-size: 1.25rem;
+}
+.article-metadata .tooltip-text{
+  visibility: hidden;
+  background-color: #b3b3b3;
+  font-size: 25px;
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  opacity: 0; /* This will make the tooltip text invisible when it's not being hovered on */
+  transition: opacity 1s;
+   /* Position the tooltip */
+   position: fixed;
+   z-index: 1;
+}
+.article-metadata:hover .tooltip-text{
+  visibility: visible;
+  opacity: 1;
+}
+
+/* styling for landing page */
+.container{
+  height: 100%;
+  width:100%;
+}
+#home-container{
+  height: 100%;
+  width:100%;
+  position: relative;
+}
+#btn1{
+  position: absolute;
+  left: 40%;
+  top: 550px;
+  background-color: white;
+  opacity: 0.8;
+  font-size: 20px;
+  border-radius: 12px;
+}
+#btn2{
+  position: absolute;
+  left: 60%;
+  top: 550px;
+  background-color: white;
+  opacity: 0.8;
+  font-size: 20px;
+  border-radius: 12px;
+}
+#background-img{
+  position: fixed;
+  top: 0;
+  left: 300px;
+  min-width: 40%;
+  min-height: 40%;
+  max-width: 100%;
+  max-width: 100%;
+}
+#greeting-text{
+  position: fixed;
+  top: 20%;
+  left: 35%;
+  width: 60%;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 100px;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+#greeting-text-2{
+  position: fixed;
+  top: 40%;
+  left: 25%;
+  width: 70%;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 60px;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+/* styling for profile.html*/
+
+
+
+/* styling for login.html and register.html */
+/*all font size styles are inline*/
+.content{
+  position: fixed;
+  top: 15%;
+  left: 35%;
+  width: 50%;
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid rgb(192, 189, 189);
+} 
+#register-content{
+  position: fixed;
+  top: 5%;
+}
+
+.sidenav {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #330000;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 28px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+.account-heading {
+  font-size: 2.5rem;
+}

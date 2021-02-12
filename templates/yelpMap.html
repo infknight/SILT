@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e4c225f4a51646778af352ef0a12ea42 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_e4c225f4a51646778af352ef0a12ea42" ></div>
+        
+</body>
+<script>    
+    
+            var map_e4c225f4a51646778af352ef0a12ea42 = L.map(
+                "map_e4c225f4a51646778af352ef0a12ea42",
+                {
+                    center: [30.627977, -96.334404],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_48035d801664474db1c52df81639ee48 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_e4c225f4a51646778af352ef0a12ea42);
+        
+    
+            var marker_65e1c6656511471eaa4f5eab02416c9c = L.marker(
+                [30.674138, -96.374457],
+                {}
+            ).addTo(map_e4c225f4a51646778af352ef0a12ea42);
+        
+    
+            var icon_9d420fadb04c4776a56724b00e788690 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "darkred", "prefix": "glyphicon"}
+            );
+            marker_65e1c6656511471eaa4f5eab02416c9c.setIcon(icon_9d420fadb04c4776a56724b00e788690);
+        
+    
+        var popup_50bac4f4a79b49d29014b0b2dc96853b = L.popup({"maxWidth": 300, "minWidth": 300});
+
+        
+            var html_f26969292fb94ad188cb04f385a56ff8 = $(`<div id="html_f26969292fb94ad188cb04f385a56ff8" style="width: 100.0%; height: 100.0%;">The Village<br><br>Address: 210 W 26th St<br>Price: $$<br>Rating: 4.0/5</div>`)[0];
+            popup_50bac4f4a79b49d29014b0b2dc96853b.setContent(html_f26969292fb94ad188cb04f385a56ff8);
+        
+
+        marker_65e1c6656511471eaa4f5eab02416c9c.bindPopup(popup_50bac4f4a79b49d29014b0b2dc96853b)
+        ;
+
+        
+    
+</script>

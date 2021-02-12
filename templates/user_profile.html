@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<img class="rounded-circle article-img" src="{{ url_for('static', filename='image/' + posts.user_pic) }}">
+<h2 class="account-heading">{{ posts.username }}</h2>
+<p class="text-secondary">{{ posts.email }}</p>
+<p class="text-secondary">{{ art.artist_name }}</p>
+  <div class="spotify-container">
+    {%if len != 0%}
+      <h3>{{ posts.username }}'s top artists:</h3>
+    {%endif%}
+    <ol>
+        {%for i in range(0, len)%}
+          <li>{{ art[i] }}</li>
+        {%endfor%}
+    </ol>
+  </div>
+{% endblock content %}

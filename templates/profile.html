@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="content-section" id="profile-content">
+    <div class="profile-container">
+      <img class="rounded-circle account-img" width = 200 height = 200 src="{{ image_file}}" 
+      style="opacity: 0.4;
+        filter: alpha(opacity=40);
+        margin: 2px 0 0 0;">
+      <div class="media-body">
+        <h2 class="account-heading">{{ current_user.username }}</h2>
+        <p class="text-secondary">{{ current_user.email }}</p>
+        <p class="text-secondary"> {{ twitter_user }} </p>
+      </div>
+      <div class="content-section">
+          <form method="POST" action="" enctype="multipart/form-data">
+              {{ form.hidden_tag() }}
+              <fieldset class="form-group">
+                  <legend class="border-bottom mb-4">Account Information</legend>
+  <!--                this is the part where wer create each individual components username, email, password, etc-->
+  <!--                variable names here to -->
+                  <div class = "form-group">
+                      {{ form.username.label(class="form-control-label") }}
+                      {% if form.username.errors %}
+                        {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                          {% for error in form.username.errors %}
+                            <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                      {% else %}
+                        {{ form.username(class="form-control form-control-lg") }}
+                      {% endif %}
+                  </div>
+                  <div class = "form-group">
+                      {{ form.email.label(class="form-control-label") }}
+                      {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                          {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                      {% else %}
+                        {{ form.email(class="form-control form-control-lg") }}
+                      {% endif %}
+                  </div>
+                  <div class="form-group">
+                    {{ form.picture.label() }}
+                    {{ form.picture(class="form-control-file") }}
+                    {% if form.picture.errors %}
+                      {% for error in form.picture.errors %}
+                        <span class="text-danger">{{ error }}</span></br>
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+              </fieldset>
+              <div class="form-group">
+                  {{ form.submit(class="btn btn-outline-info") }}
+              </div>
+            
+          </form>
+
+      </div>
+    </div>
+    <div class="spotify-container">
+      <a href="/spotify_authorize" class="btn btn-success">Link Spotify</a>
+      <hr>
+      {%if leng != 0%}
+        <h3>Your Top Artists:</h3>
+      {%endif%}
+      <ol>
+          {%for i in range(0, leng)%}
+            <li>{{ posts[i] }}</li>
+          {%endfor%}
+      </ol>
+      </div>
+  </div>
+{% endblock content %}
+

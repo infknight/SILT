@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="forum-content-container"  id="sports-container">
+  <h3 class="forum_header">Texas A&M SILT Forum Page</h3>
+
+  <div class="forum-content">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light" id="forum_navbar" style="background-color: transparent;">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav" id="forum_navbar_content">
+        <li><a class="nav-item nav-link active" href="/home" > Community Page </a></li>
+        <li><a class="nav-item nav-link" href="/studyLounge"> Study </a></li>
+        <li><a class="nav-item nav-link" href="/funny"> Housing </a></li>
+        <li><a class="nav-item nav-link" href="/Events"> Food </a></li>
+        <li><a class="nav-item nav-link" href="/sports" style="font-weight: bold;"> Sports <span class="sr-only">(current)</span></a></li>
+        <li><a class="nav-item nav-link" href="/course"> Course Help </a></li>
+      </div>
+    </div>
+  </nav> 
+
+  <div class="row" id="forum-cards">
+  {% for post in posts %}
+    <div class="card">
+      <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <img class="rounded-circle article-img" src="{{ url_for('static', filename='image/' + post.author.user_pic) }}" 
+            style="height: 15%; 
+            width: 10%; 
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+            margin: 2px 0 0 0;">
+            <a class="card-username" href="#">{{ post.author.username }}</a>
+            <small class="text-muted">{{ post.post_time.strftime('%Y-%m-%d') }}</small>
+          </div>
+          <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+          <p class="article-content">{{ post.content }}</p>
+        </div>
+      </article>
+    </div>
+  {% endfor %}
+  </div>
+  <button class="new-post-button"><a href= {{ url_for('new_post_sp') }} >Create New Post</a></button>
+{% endblock content %}
